@@ -1,0 +1,35 @@
+PLANNING PHASE - JIRA
+
+SOURCE CODE MGMT - GIT
+==============================
+JIRA + GITHUB =======
+
+CODE REVIEW - SONARQUBE
+
+BUILD MANAGEMNET - MAVEN
+> mvn compile
+> mvn test
+> mvn package
+> mvn deploy
+
+UNIT TESTING - JUNIT
+
+PACKAGING - JAR, WAR
+
+Artifact Repo MGMT - NEXUS
+===========================================
+pom.xml
+setting.xml
+
+DEPLOY TO QA BOXES -CHEF | DOCKER
+TESTING - SEL
+CODE COVERAGE - JACOCO
+
+RELEASE
+===============================
+
+http://104.154.177.57
+
+JIRA
+=================================
+docker run --detach --publish 8085:8080 cptactionhank/atlassian-jira:latest
