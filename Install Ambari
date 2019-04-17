@@ -1,0 +1,45 @@
+Install Ambari
+https://cwiki.apache.org/confluence/display/AMBARI/Installation+Guide+for+Ambari+2.7.3
+
+wget http://www.apache.org/dist/ambari/ambari-2.7.3/apache-ambari-2.7.3-src.tar.gz (use the suggested mirror from above)
+tar xfvz apache-ambari-2.7.3-src.tar.gz
+
+
+maven
+https://www.tecmint.com/install-apache-maven-on-centos-7/
+
+# yum install -y java-1.8.0-openjdk-devel
+# java -version
+# cd /usr/local/src
+# wget http://www-us.apache.org/dist/maven/maven-3/3.5.4/binaries/apache-maven-3.5.4-bin.tar.gz
+# tar -xf apache-maven-3.5.4-bin.tar.gz
+# mv apache-maven-3.5.4/ apache-maven/ 
+# cd /etc/profile.d/
+# vim maven.sh
+
+Add the following configuration in ‘maven.sh’ configuration file.
+# Apache Maven Environment Variables
+# MAVEN_HOME for Maven 1 - M2_HOME for Maven 2
+export M2_HOME=/usr/local/src/apache-maven
+export PATH=${M2_HOME}/bin:${PATH}
+
+# chmod +x maven.sh
+# source /etc/profile.d/maven.sh
+
+# mvn --version
+
+
+cd apache-ambari-2.7.3-src
+mvn versions:set -DnewVersion=2.7.3.0.0
+ 
+pushd ambari-metrics
+mvn versions:set -DnewVersion=2.7.3.0.0
+popd
+
+https://www.linuxhelp.com/how-to-install-ambari-server-on-centos-7
+
+Database admin user (admin): postgres
+Database name (ambari): 
+Postgres schema (ambari): 
+Username (ambari): 
+Enter Database Password (bigdata): 
